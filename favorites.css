@@ -1,0 +1,338 @@
+body {
+    background-color: #f9f7f6;
+  }
+
+  h2 {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:#333;
+}
+  
+  .remove-btn {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cart-wrapper {
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    align-items: center;      /* center vertically (optional) */
+    background-color: #f9f7f5; /* match your background */
+}
+
+#cart-items {
+    width: 100%;
+    max-width: 700px; /* optional, for better control */
+}
+
+.remove-btn:hover {
+    background-color: #f0f0f0;
+}
+
+  .cart-item img {
+    width: 120px;
+    height: auto;
+  }
+
+  .card img {
+    width: 120px; /* Adjusted size */
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .summary-box {
+    background-color: white !important;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 0 auto 15px auto;  /* center item and spacing */
+    border-radius: 8px;
+    background-color: white !important;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* optional, subtle shadow */
+}
+
+  .cart-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 15px;
+}
+
+  .cart-details {
+    display: flex;
+    flex-direction: column;
+}
+  
+  .cart-item .ms-auto {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-outline-secondary {
+    border-radius: 4px;
+  }
+  
+  .btn-link {
+    border: none;
+    background: none;
+    font-size: 18px;
+  }
+  
+  .fw-bold {
+    font-weight: bold;
+  }
+  
+  .subtotal {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 15px;
+  }
+  
+  /* NAVBAR STYLES */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+  }
+  
+  .nav-title-1 {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-button-1 {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 15px; 
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button-1:hover {
+    background-color: lightgray; /* Light gray background on hover */
+    border-radius: 5px;
+  }
+  
+  .nav-button-1:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .nav-title-1 .nav-button-1 {
+    font-weight: bold; /* Make only these buttons bold */
+    font-size: 16px; /* Adjust size if needed */
+    font-family: "Arial", sans-serif; /* Customize font */
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-right a img {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .nav-right a img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Remove styles related to the burger menu */
+  .navbar-toggler {
+    display: none; /* Hide burger menu button */
+  }
+  
+  .collapse {
+    display: block !important; /* Ensure nav links are always visible */
+  }
+  
+  .navbar-nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-item {
+    list-style: none;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+  }
+  
+  .cart-icon {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #cart-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #cart-count {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -36%); /* Centers the count */
+    color: rgb(32, 32, 32);
+    font-size: 12px; /* Adjust font size */
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 16px;
+    text-align: center;
+    animation: pop 0.3s ease-in-out;
+  }
+  
+  /* Pop Animation */
+  @keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  
+  .pop-animation {
+    animation: pop 0.3s ease-in-out;
+  }
+  
+  /* Wishlist Item Styling */
+  .wishlist-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .wishlist-item .product-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wishlist-item .product-name {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .wishlist-item .product-price {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .wishlist-item .product-size {
+    font-size: 0.9rem;
+    color: #777;
+  }
+
+  .cloud9-footer {
+    background-color: #182B2F;
+    color: white;
+    width:100%;
+    text-align: center;
+    position: relative;
+  }
+  
+  .cloud9-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .cloud9-footer-title {
+    color: white; /* Ensuring Certified Classics appears white */
+  }
+  
+  .cloud9-footer-links {
+    width: 100%;
+  }
+  
+  .cloud9-footer-link-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+  }
+  
+  .cloud9-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  .cloud9-footer-dropdown {
+    display: none;
+    padding: 10px;
+    text-align: left;
+    color: white; /* Ensuring text inside dropdown is white */
+  }
+  
+  /* Show dropdown when active */
+  .cloud9-footer-dropdown.active {
+    display: block;
+  }
+  
+  .cloud9-footer-signup {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  
+  .cloud9-email-input {
+    width: 60%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .cloud9-signup-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .cloud9-footer-bottom {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .cloud9-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .cloud9-social-icons img {
+    width: 30px;
+    height: 30px;
+  }

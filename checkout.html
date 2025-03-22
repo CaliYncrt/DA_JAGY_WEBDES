@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="checkout.css" media="screen" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<!-- NAV BAR -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <!-- Black Logo First -->
+        <a class="navbar-brand" href="index.html">
+            <img src="Assets/black logo.png" alt="logo" width="50" height="44">
+        </a>
+
+        <!-- Centered Buttons (Men, Women, Kids) -->
+        <div class="nav-title-1">
+            <button class="nav-button-1" onclick="navigateToCategory('new-products')">New Arrivals</button>
+            <button class="nav-button-1" onclick="navigateToCategory('men-products')">Men</button>
+            <button class="nav-button-1" onclick="navigateToCategory('women-products')">Women</button>
+            <button class="nav-button-1" onclick="navigateToCategory('kids-products')">Kids</button>
+        </div>
+
+        <!-- Cart & Human Icon -->
+    <div class="nav-right">
+        <!-- Favorites (Heart) Icon -->
+        <a href="favorites.html" class="favorite-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" alt="favorites" width="25" height="25">
+        </a>
+        
+        <!-- Cart Icon -->
+        <a href="cart.html" class="cart-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/2956/2956820.png" alt="cart" width="40" height="40">
+            <span id="cart-count">0</span>
+        </a>
+    
+        <!-- Human Icon -->
+        <a href="Login.html" class="human-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="user" width="30" height="30">
+        </a>
+    </div>
+</nav>
+
+<body>
+    <main class="page payment-page">
+        <section class="payment-form">
+            <div class="container">
+                <div class="block-heading">
+                    <h1 class="title">CHECKOUT</h1>
+                </div>
+                <form id="payment-form" novalidate>
+                    <div class="products">
+                        <section id="order-summary" class="order-summary">
+                            <h2>Order Summary</h2>
+                            <div id="checkout-items" class="checkout-table"></div>
+                            <div class="discount-code mt-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Discount code">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="total-price mt-3">
+                                <p>Total: <span id="checkout-total">₱0.00</span></p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="Payment">Payment</h3>
+                        <p class="secure-text">All transactions are secure and encrypted.</p>
+                        <div class="payment-method">
+                            <div class="payment-method-header">
+                                <h4>Credit card</h4>
+                                <div class="card-icons">
+                                    <div class="card-icon visa">VISA</div>
+                                    <div class="card-icon mastercard">
+                                        <div class="mc-circle red"></div>
+                                        <div class="mc-circle yellow"></div>
+                                    </div>
+                                    <div class="card-icon discover">DISCOVER</div>
+                                    <div class="card-icon amex">AMEX</div>
+                                    <span class="more-cards">+6</span>
+                                </div>
+                            </div>
+                            <div class="card-input-container">
+                                <div class="form-group position-relative">
+                                    <label for="card-number">Card Number</label>
+                                    <input id="card-number" type="text" class="form-control card-input" placeholder="**** **** **** ****" maxlength="19">
+                                    <i class="fas fa-lock card-lock-icon"></i>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="expiry-date">Expiration Date</label>
+                                            <input id="expiry-date" type="text" class="form-control" placeholder="MM/YY" maxlength="5">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="security-code">Security Code</label>
+                                            <input id="security-code" type="text" class="form-control" placeholder="123" maxlength="4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-holder">Name on Card</label>
+                                    <input id="card-holder" type="text" class="form-control" placeholder="JOHN DOE">
+                                </div>
+                                <div class="form-group shipping-checkbox">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                        Use shipping address as billing address
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group pay-button-container">
+                            <button type="button" id="complete-order" class="btn pay-button">Pay now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="cloud9-footer">
+        <div class="cloud9-footer-container">
+            <h5 class="cloud9-footer-title">Certified Classics</h5>
+            <p class="cloud9-footer-description">Have your feet looking great in timeless kicks</p>
+      
+            <div class="cloud9-footer-links">
+                <div class="cloud9-footer-link-section">
+                    <h5>ABOUT</h5>
+                    <div class="cloud9-toggle">+</div>
+                </div>
+                <div class="cloud9-footer-dropdown">
+                    <p>Welcome to Cloud Kicks – where comfort meets innovation.
+      
+                      At Cloud Kicks, we believe that every step should feel like walking on air. Our shoes are designed with cutting-edge cloud cushion technology, providing lightweight, responsive, and ultra-soft support for all-day wear. Whether you're hitting the streets, the gym, or just exploring, our kicks give you the perfect blend of style, performance, and cloud-like comfort.
+                      
+                      With a focus on premium materials and sleek, modern designs, Cloud Kicks isn’t just about footwear – it’s about an experience. Feel the difference with every step and elevate your movement with the latest in cloud-inspired sneaker innovation.
+                      
+                      Step into the future. Step into the clouds.</p>
+                </div>
+      
+                <div class="cloud9-footer-link-section">
+                    <h5>CUSTOMER SERVICE</h5>
+                    <div class="cloud9-toggle">+</div>
+                </div>
+                <div class="cloud9-footer-dropdown">
+                    <p>At Cloud9 Shoes, we’re committed to providing top-notch support for all your needs. Whether you have questions about sizing, shipping, returns, or product care, our customer service team is here to assist you. We strive to make your shopping experience seamless, ensuring you get the best footwear with confidence. Need help? Reach out to us—we’re always happy to assist!</p>
+                </div>
+      
+                <div class="cloud9-footer-link-section">
+                    <h5>POPULAR LINKS</h5>
+                    <div class="cloud9-toggle">+</div>
+                </div>
+                <div class="cloud9-footer-dropdown">
+                    <p>Discover the best of Cloud9 Shoes! Explore our bestsellers, check out the latest arrivals, and take advantage of special promotions. Whether you’re looking for high-performance sneakers, stylish everyday kicks, or exclusive collaborations, our most popular links will help you find the perfect pair. Stay ahead of the trends and step into comfort and style with Cloud9 Shoes!</p>
+                </div>
+            </div>
+      
+            <div class="cloud9-footer-signup">
+                <input type="email" class="cloud9-email-input" placeholder="Enter your email address">
+                <button class="cloud9-signup-button">SIGN UP</button>
+            </div>
+        </div>
+      
+        <div class="cloud9-footer-bottom">
+            <p>PHILIPPINES | PHP</p>
+            <p>COPYRIGHT © 2025 CLOUD9.COM.PH ALL RIGHTS RESERVED</p>
+            <div class="cloud9-social-icons">
+                <a href="#"><img src="Assets/fb.png" alt="Facebook"></a>
+                <a href="#"><img src="Assets/ig.png" alt="Instagram"></a>
+                <a href="#"><img src="Assets/tt.png" alt="TikTok"></a>
+                <a href="#"><img src="Assets/x.png" alt="Twitter"></a>
+            </div>
+        </div>
+      </footer>
+    
+    <script src="checkout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function navigateToCategory(categoryId) {
+            window.location.href = "index.html#" + categoryId;
+        }
+    </script>
+    
+</body>
+</html>

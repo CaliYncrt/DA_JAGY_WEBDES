@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<!-- NAV BAR -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <!-- Black Logo First -->
+        <a class="navbar-brand" href="index.html">
+            <img src="Assets/black logo.png" alt="logo" width="50" height="44">
+        </a>
+
+        <!-- Centered Buttons (Men, Women, Kids) -->
+        <div class="nav-title-1">
+            <button class="nav-button-1" onclick="navigateToCategory('new-products')">New Arrivals</button>
+            <button class="nav-button-1" onclick="navigateToCategory('men-products')">Men</button>
+            <button class="nav-button-1" onclick="navigateToCategory('women-products')">Women</button>
+            <button class="nav-button-1" onclick="navigateToCategory('kids-products')">Kids</button>
+        </div>
+
+        <!-- Cart & Human Icon -->
+    <div class="nav-right">
+        <!-- Favorites (Heart) Icon -->
+        <a href="favorites.html" class="favorite-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" alt="favorites" width="25" height="25">
+        </a>
+
+        <!-- Cart Icon -->
+        <a href="cart.html" class="cart-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/2956/2956820.png" alt="cart" width="40" height="40">
+            <span id="cart-count">0</span>
+        </a>
+    
+        <!-- Human Icon -->
+        <a href="Login.html" class="human-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="user" width="30" height="30">
+        </a>
+    </div>
+</nav>
+
+<body>
+    <div class="container mt-5">
+        <h2>CART</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <div id="cart-items"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="border p-3 summary-box">
+                    <h4>Summary</h4>
+                    <p>Subtotal: <span class="fw-bold" id="cart-subtotal">₱0.00</span></p>
+                    <p>Estimated Delivery & Handling: <span class="fw-bold">Free</span></p>
+                    <hr>
+                    <p class="fs-4 fw-bold">Total: <span id="cart-total">₱0.00</span></p>
+                    <button class="btn btn-dark w-100 checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+
+    <section id="new-products">
+        <div class="unique-carousel-container">
+          <h1>NEW ARRIVALS</h1>
+          <hr>
+          <br>
+          <div class="unique-carousel">
+            
+            <a href="buying.html?name=Cloudmonster%20Hyper&price=12090&image=Assets/s1.png" class="product-link">
+              <div class="unique-product">
+                <img src="Assets/s1.png" alt="Cloudmonster">
+                <h3>Cloudmonster</h3>
+                <p>Road running</p>
+                <p><span class="price-box">₱12,090.00</span></p>
+              </div>
+            </a>
+            
+            <a href="buying.html?name=Cloudnova%202&price=8790&image=Assets/s2.png" class="product-link">
+              <div class="unique-product">
+                <img src="Assets/s2.png" alt="Cloudnova 2">
+                <h3>Cloudnova 2</h3>
+                <p>Everyday wear</p>
+                <p><span class="price-box">₱8,790.00</span></p>
+              </div>
+            </a>
+      
+            <a href="buying.html?name=SpeedCat&price=3290&image=Assets/s3.png" class="product-link">
+              <div class="unique-product">
+                <img src="Assets/s3.png" alt="SpeedCat">
+                <h3>SpeedCat</h3>
+                <p>Lightweight</p>
+                <p><span class="price-box">₱3,290.00</span></p>
+              </div>
+            </a>
+      
+            <a href="buying.html?name=Swift%20Shoes&price=10500&image=Assets/s4.png" class="product-link">
+              <div class="unique-product">
+                <img src="Assets/s4.png" alt="Swift Shoes">
+                <h3>Swift Shoes</h3>
+                <p>High-performance</p>
+                <p><span class="price-box">₱10,500.00</span></p>
+              </div>
+            </a>
+      
+            <a href="buying.html?name=Cloudkicks&price=5990&image=Assets/st1.png" class="product-link">
+              <div class="unique-product">
+                <img src="Assets/st1.png" alt="Cloudkicks">
+                <h3>Cloudkicks</h3>
+                <p>Windproof</p>
+                <p><span class="price-box">₱5,990.00</span></p>
+              </div>
+            </a>
+      
+            <a href="buying.html?name=Lightning%20Cloud&price=2790&image=Assets/st13.png" class="product-link">
+              <div class="unique-product">
+                <img src="Assets/st13.png" alt="Lightning Cloud">
+                <h3>Lightning Cloud</h3>
+                <p>Breathable</p>
+                <p><span class="price-box">₱2,790.00</span></p>
+              </div>
+            </a>
+          </div>
+        </div>
+    </section>  
+
+      <br><br><br><br>
+
+      <footer class="cloud9-footer">
+        <div class="cloud9-footer-container">
+            <h5 class="cloud9-footer-title">Certified Classics</h5>
+            <p class="cloud9-footer-description">Have your feet looking great in timeless kicks</p>
+      
+            <div class="cloud9-footer-links">
+                <div class="cloud9-footer-link-section">
+                    <h5>ABOUT</h5>
+                    <div class="cloud9-toggle">+</div>
+                </div>
+                <div class="cloud9-footer-dropdown">
+                    <p>Welcome to Cloud Kicks – where comfort meets innovation.
+      
+                      At Cloud Kicks, we believe that every step should feel like walking on air. Our shoes are designed with cutting-edge cloud cushion technology, providing lightweight, responsive, and ultra-soft support for all-day wear. Whether you're hitting the streets, the gym, or just exploring, our kicks give you the perfect blend of style, performance, and cloud-like comfort.
+                      
+                      With a focus on premium materials and sleek, modern designs, Cloud Kicks isn’t just about footwear – it’s about an experience. Feel the difference with every step and elevate your movement with the latest in cloud-inspired sneaker innovation.
+                      
+                      Step into the future. Step into the clouds.</p>
+                </div>
+      
+                <div class="cloud9-footer-link-section">
+                    <h5>CUSTOMER SERVICE</h5>
+                    <div class="cloud9-toggle">+</div>
+                </div>
+                <div class="cloud9-footer-dropdown">
+                    <p>At Cloud9 Shoes, we’re committed to providing top-notch support for all your needs. Whether you have questions about sizing, shipping, returns, or product care, our customer service team is here to assist you. We strive to make your shopping experience seamless, ensuring you get the best footwear with confidence. Need help? Reach out to us—we’re always happy to assist!</p>
+                </div>
+      
+                <div class="cloud9-footer-link-section">
+                    <h5>POPULAR LINKS</h5>
+                    <div class="cloud9-toggle">+</div>
+                </div>
+                <div class="cloud9-footer-dropdown">
+                    <p>Discover the best of Cloud9 Shoes! Explore our bestsellers, check out the latest arrivals, and take advantage of special promotions. Whether you’re looking for high-performance sneakers, stylish everyday kicks, or exclusive collaborations, our most popular links will help you find the perfect pair. Stay ahead of the trends and step into comfort and style with Cloud9 Shoes!</p>
+                </div>
+            </div>
+      
+            <div class="cloud9-footer-signup">
+                <input type="email" class="cloud9-email-input" placeholder="Enter your email address">
+                <button class="cloud9-signup-button">SIGN UP</button>
+            </div>
+        </div>
+      
+        <div class="cloud9-footer-bottom">
+            <p>PHILIPPINES | PHP</p>
+            <p>COPYRIGHT © 2025 CLOUD9.COM.PH ALL RIGHTS RESERVED</p>
+            <div class="cloud9-social-icons">
+                <a href="#"><img src="Assets/fb.png" alt="Facebook"></a>
+                <a href="#"><img src="Assets/ig.png" alt="Instagram"></a>
+                <a href="#"><img src="Assets/tt.png" alt="TikTok"></a>
+                <a href="#"><img src="Assets/x.png" alt="Twitter"></a>
+            </div>
+        </div>
+      </footer>
+
+    <script src="cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function navigateToCategory(categoryId) {
+            window.location.href = "index.html#" + categoryId;
+        }
+    </script>
+    
+</body>
+</html>

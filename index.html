@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOUD9</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV BAR -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <!-- Black Logo First -->
+        <a class="navbar-brand" href="index.html">
+            <img src="Assets/black logo.png" alt="logo" width="50" height="44">
+        </a>
+
+        <!-- Centered Buttons (Men, Women, Kids) -->
+        <div class="nav-title-1">
+            <button class="nav-button-1" onclick="scrollToSection('new-products')">New Arrivals</button>
+            <button class="nav-button-1" onclick="scrollToSection('men-products')">Men</button>
+            <button class="nav-button-1" onclick="scrollToSection('women-products')">Women</button>
+            <button class="nav-button-1" onclick="scrollToSection('kids-products')">Kids</button>
+        </div>
+
+        <!-- Cart & Human Icon -->
+    <div class="nav-right">
+        <!-- Favorites (Heart) Icon -->
+        <a href="favorites.html" class="favorite-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" alt="favorites" width="25" height="25">
+        </a>
+
+        <!-- Cart Icon -->
+        <a href="cart.html" class="cart-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/2956/2956820.png" alt="cart" width="40" height="40">
+            <span id="cart-count">0</span>
+        </a>
+    
+        <!-- Human Icon -->
+        <a href="Login.html" class="human-icon">
+            <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="user" width="30" height="30">
+        </a>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="hero-0" class="hero">
+  <div class="container">
+      <div class="text-container">
+          <p class="subheading">  YOUR NEW COMFYKICKS</p>
+          <h1 class="main-heading">THE CLOUD9</h1>
+      </div>
+  </div>
+</section>
+
+
+
+<!-- CAROUSEL -->
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img class="d-block w-100" src="Assets/1.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+          <img class="d-block w-100" src="Assets/2.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+          <img class="d-block w-100" src="Assets/3.jpg" alt="Third slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="Assets/4.jpg" alt="Second slide">
+    </div>
+  </div>
+  
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+  </a>
+</div>
+<br><br>
+
+<!-- PRODUCTS 1 -->
+<section id="new-products">
+    <div class="unique-carousel-container">
+      <h1>NEW ARRIVALS</h1>
+      <hr>
+      <br>
+      <button class="unique-prev-btn">&#10094;</button>
+      <div class="unique-carousel">
+        
+        <a href="buying.html?name=Cloudmonster&price=12090&image=Assets/s1.png&thumbs=Assets/s1.png,Assets/cm1.jpg,Assets/cm2.jpg,Assets/cm3.jpg" class="product-link">
+          <div class="unique-product">
+            <img src="Assets/s1.png" alt="Cloudmonster">
+            <h3>Cloudmonster</h3>
+            <p>Road running</p>
+            <p><span class="price-box">₱12,090.00</span></p>
+          </div>
+        </a>
+        
+        <a href="buying.html?name=Cloudnova%202&price=8790&image=Assets/s2.png&thumbs=Assets/s2.png,Assets/cn1.jpg,Assets/cn2.jpg,Assets/cn3.jpg" class="product-link">
+          <div class="unique-product">
+            <img src="Assets/s2.png" alt="Cloudnova 2">
+            <h3>Cloudnova 2</h3>
+            <p>Everyday wear</p>
+            <p><span class="price-box">₱8,790.00</span></p>
+          </div>
+        </a>
+  
+        <a href="buying.html?name=SpeedCat&price=3290&image=Assets/s3.png&thumbs=Assets/s3.png,Assets/sc1.jpg,Assets/sc2.jpg,Assets/sc3.jpg" class="product-link">
+          <div class="unique-product">
+            <img src="Assets/s3.png" alt="SpeedCat">
+            <h3>SpeedCat</h3>
+            <p>Lightweight</p>
+            <p><span class="price-box">₱3,290.00</span></p>
+          </div>
+        </a>
+  
+        <a href="buying.html?name=Swift%20Shoes&price=10500&image=Assets/s4.png&thumbs=Assets/s4.png,Assets/ss1.jpg,Assets/ss2.jpg,Assets/ss3.jpg" class="product-link">
+          <div class="unique-product">
+            <img src="Assets/s4.png" alt="Swift Shoes">
+            <h3>Swift Shoes</h3>
+            <p>High-performance</p>
+            <p><span class="price-box">₱10,500.00</span></p>
+          </div>
+        </a>
+  
+        <a href="buying.html?name=Cloudkicks&price=5990&image=Assets/st1.png&thumbs=Assets/st1.png,Assets/ck1.jpg,Assets/ck2.jpg,Assets/ck3.jpg" class="product-link">
+          <div class="unique-product">
+            <img src="Assets/st1.png" alt="Cloudkicks">
+            <h3>Cloudkicks</h3>
+            <p>Windproof</p>
+            <p><span class="price-box">₱5,990.00</span></p>
+          </div>
+        </a>
+  
+        <a href="buying.html?name=Lightning%20Cloud&price=2790&image=Assets/st13.png&thumbs=Assets/st13.png,Assets/lc1.jpg,Assets/lc2.jpg,Assets/lc3.jpg" class="product-link">
+          <div class="unique-product">
+            <img src="Assets/st13.png" alt="Lightning Cloud">
+            <h3>Lightning Cloud</h3>
+            <p>Breathable</p>
+            <p><span class="price-box">₱2,790.00</span></p>
+          </div>
+        </a>
+  
+      </div>
+      <button class="unique-next-btn">&#10095;</button>
+    </div>
+</section>  
+<br><br>
+
+<!-- IMAGE SECTION BELOW NEW'S PRODUCTS -->
+<div id="new-banner">
+    <img src="Assets/cloud2.jpg" alt="New's Collection Banner">
+    <img src="Assets/cloud1.jpg" alt="New's Collection Banner">
+    <img src="Assets/cloud3.jpg" alt="New's Collection Banner">
+</div>
+
+<br><br>
+
+<!-- PRODUCTS 2 -->
+<section id="men-products">
+    <h1>MEN</h1>
+    <hr>
+    <br>
+<!-- Men Category -->   
+    <div class="product-container">
+        <a href="buying.html?name=Cloud%20Stride%20X&price=3500&image=Assets/m1.png&thumbs=Assets/m1.png,Assets/cs1.jpg,Assets/cs2.jpg,Assets/cs3.jpg" class="product-link">
+        <div class="product">
+            <div class="card card-hover">
+                <img src="Assets/m1.png" alt="Cloud Stride X">
+                <div class="card-content">
+                    <h3 class="card-title">Cloud Stride X</h3>
+                    <p class="card-price">₱3,500.00</p>
+                </div>
+            </div>
+        </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Nimbus%20Racer&price=4200&image=Assets/m2.png&thumbs=Assets/m2.png,Assets/nr1.jpg,Assets/nr2.jpg,Assets/nr3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/m2.png" alt="Nimbus Racer">
+                <div class="card-content">
+                    <h3 class="card-title">Nimbus Racer</h3>
+                    <p class="card-price">₱4,200.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Stratus%20Flow&price=3800&image=Assets/m3.png&thumbs=Assets/m3.png,Assets/sf1.jpg,Assets/sf2.jpg,Assets/sf3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/m3.png" alt="Stratus Flow">
+                <div class="card-content">
+                    <h3 class="card-title">Stratus Flow</h3>
+                    <p class="card-price">₱3,800.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Cumulus%20Glide&price=4500&image=Assets/m4.png&thumbs=Assets/m4.png,Assets/cg1.jpg,Assets/cg2.jpg,Assets/cg3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/m4.png" alt="Cumulus Glide">
+                <div class="card-content">
+                    <h3 class="card-title">Cumulus Glide</h3>
+                    <p class="card-price">₱4,500.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Storm%20Runner&price=3900&image=Assets/m5.png&thumbs=Assets/m5.png,Assets/sr1.jpg,Assets/sr2.jpg,Assets/sr3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/m5.png" alt="Storm Runner">
+                <div class="card-content">
+                    <h3 class="card-title">Storm Runner</h3>
+                    <p class="card-price">₱3,900.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <br><br>
+</section>
+
+<br>
+
+<!-- Women Category -->
+<section id="women-products">
+    <h1>WOMEN</h1>
+    <hr>
+    <br>
+    <div class="product-container">
+        <div class="product">
+            <a href="buying.html?name=Luna%20Glide&price=3200&image=Assets/w1.png&thumbs=Assets/w1.png,Assets/lg1.jpg,Assets/lg2.jpg,Assets/lg3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/w1.png" alt="Luna Glide">
+                <div class="card-content">
+                    <h3 class="card-title">Luna Glide</h3>
+                    <p class="card-price">₱3,200.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Aurora%20Flex&price=3900&image=Assets/w2.png&thumbs=Assets/w2.png,Assets/af1.jpg,Assets/af2.jpg,Assets/af3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/w2.png" alt="Aurora Flex">
+                <div class="card-content">
+                    <h3 class="card-title">Aurora Flex</h3>
+                    <p class="card-price">₱3,900.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Celeste%20Runner&price=4100&image=Assets/w3.png&thumbs=Assets/w3.png,Assets/cr1.jpg,Assets/cr2.jpg,Assets/cr3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/w3.png" alt="Celeste Runner">
+                <div class="card-content">
+                    <h3 class="card-title">Celeste Runner</h3>
+                    <p class="card-price">₱4,100.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Serena%20Air&price=4500&image=Assets/w4.png&thumbs=Assets/w4.png,Assets/sa1.jpg,Assets/sa2.jpg,Assets/sa3.jpg,Assets/sa4.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/w4.png" alt="Serena Air">
+                <div class="card-content">
+                    <h3 class="card-title">Serena Air</h3>
+                    <p class="card-price">₱4,500.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Vega%20Flow&price=3600&image=Assets/w5.png&thumbs=Assets/w5.png,Assets/vf1.jpg,Assets/vf2.jpg,Assets/vf3.jpg,Assets/vf4.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/w5.png" alt="Vega Flow">
+                <div class="card-content">
+                    <h3 class="card-title">Vega Flow</h3>
+                    <p class="card-price">₱3,600.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <br><br>
+</section>
+
+<br>
+
+<!-- Kids Category -->
+<section id="kids-products">
+    <h1>KIDS</h1>
+    <hr>
+    <br>
+    <div class="product-container">
+        <div class="product">
+            <a href="buying.html?name=JumpStart%20X&price=2500&image=Assets/k1.png&thumbs=Assets/k1.png,Assets/js1.jpg,Assets/js2.jpg,Assets/js3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/k1.png" alt="JumpStart X">
+                <div class="card-content">
+                    <h3 class="card-title">JumpStart X</h3>
+                    <p class="card-price">₱2,500.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Tiny%20Sprint&price=2800&image=Assets/k2.png&thumbs=Assets/k2.png,Assets/ts1.jpg,Assets/ts2.jpg,Assets/ts3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/k2.png" alt="Tiny Sprint">
+                <div class="card-content">
+                    <h3 class="card-title">Tiny Sprint</h3>
+                    <p class="card-price">₱2,800.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Mini%20Runner&price=3000&image=Assets/k3.png&thumbs=Assets/k3.png,Assets/mr1.jpg,Assets/mr2.jpg,Assets/mr3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/k3.png" alt="Mini Runner">
+                <div class="card-content">
+                    <h3 class="card-title">Mini Runner</h3>
+                    <p class="card-price">₱3,000.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Speedy%20Kid&price=2900&image=Assets/k4.png&thumbs=Assets/k4.png,Assets/sk1.jpg,Assets/sk2.jpg,Assets/sk3.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/k4.png" alt="Speedy Kid">
+                <div class="card-content">
+                    <h3 class="card-title">Speedy Kid</h3>
+                    <p class="card-price">₱2,900.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="buying.html?name=Tiny%20Stride&price=3100&image=Assets/k5.png&thumbs=Assets/k5.png,Assets/tiny1.jpg,Assets/tiny2.jpg,Assets/tiny3.jpg,Assets/tiny4.jpg" class="product-link">
+            <div class="card card-hover">
+                <img src="Assets/k5.png" alt="Tiny Stride">
+                <div class="card-content">
+                    <h3 class="card-title">Tiny Stride</h3>
+                    <p class="card-price">₱3,100.00</p>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <br><br>
+</section>
+
+<footer class="cloud9-footer">
+  <div class="cloud9-footer-container">
+      <h5 class="cloud9-footer-title">Certified Classics</h5>
+      <p class="cloud9-footer-description">Have your feet looking great in timeless kicks</p>
+
+      <div class="cloud9-footer-links">
+          <div class="cloud9-footer-link-section">
+              <h5>ABOUT</h5>
+              <div class="cloud9-toggle">+</div>
+          </div>
+          <div class="cloud9-footer-dropdown">
+              <p>Welcome to Cloud Kicks – where comfort meets innovation.
+
+                At Cloud Kicks, we believe that every step should feel like walking on air. Our shoes are designed with cutting-edge cloud cushion technology, providing lightweight, responsive, and ultra-soft support for all-day wear. Whether you're hitting the streets, the gym, or just exploring, our kicks give you the perfect blend of style, performance, and cloud-like comfort.
+                
+                With a focus on premium materials and sleek, modern designs, Cloud Kicks isn’t just about footwear – it’s about an experience. Feel the difference with every step and elevate your movement with the latest in cloud-inspired sneaker innovation.
+                
+                Step into the future. Step into the clouds.</p>
+          </div>
+
+          <div class="cloud9-footer-link-section">
+              <h5>CUSTOMER SERVICE</h5>
+              <div class="cloud9-toggle">+</div>
+          </div>
+          <div class="cloud9-footer-dropdown">
+              <p>At Cloud9 Shoes, we’re committed to providing top-notch support for all your needs. Whether you have questions about sizing, shipping, returns, or product care, our customer service team is here to assist you. We strive to make your shopping experience seamless, ensuring you get the best footwear with confidence. Need help? Reach out to us—we’re always happy to assist!</p>
+          </div>
+
+          <div class="cloud9-footer-link-section">
+              <h5>POPULAR LINKS</h5>
+              <div class="cloud9-toggle">+</div>
+          </div>
+          <div class="cloud9-footer-dropdown">
+              <p>Discover the best of Cloud9 Shoes! Explore our bestsellers, check out the latest arrivals, and take advantage of special promotions. Whether you’re looking for high-performance sneakers, stylish everyday kicks, or exclusive collaborations, our most popular links will help you find the perfect pair. Stay ahead of the trends and step into comfort and style with Cloud9 Shoes!</p>
+          </div>
+      </div>
+
+      <div class="cloud9-footer-signup">
+          <input type="email" class="cloud9-email-input" placeholder="Enter your email address">
+          <button class="cloud9-signup-button">SIGN UP</button>
+      </div>
+  </div>
+
+  <div class="cloud9-footer-bottom">
+      <p>PHILIPPINES | PHP</p>
+      <p>COPYRIGHT © 2025 CLOUD9.COM.PH ALL RIGHTS RESERVED</p>
+      <div class="cloud9-social-icons">
+          <a href="#"><img src="Assets/fb.png" alt="Facebook"></a>
+          <a href="#"><img src="Assets/ig.png" alt="Instagram"></a>
+          <a href="#"><img src="Assets/tt.png" alt="TikTok"></a>
+          <a href="#"><img src="Assets/x.png" alt="Twitter"></a>
+      </div>
+  </div>
+</footer>
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+  <script src="index.js"></script>
+  <script src="cart.js"></script>
+  <script src="favourites.js"></script>
+
+</body>
+</html>

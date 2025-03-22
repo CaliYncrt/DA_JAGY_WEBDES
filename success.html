@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Order Confirmed</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f9f7f6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Playfair Display", serif;
+        }
+
+        .site-header {
+            padding: 15px 0;
+            background-color: #f9f7f6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navigation-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .brand-logo {
+            display: block;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            height: auto;
+            max-height: 40px;
+        }
+
+        .success-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .success-card {
+            background-color: white;
+            border-radius: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background-color: #1a2e35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 50px;
+        }
+
+        .success-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a2e35;
+        }
+
+        .success-message {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .order-details {
+            background-color: white;
+            border-radius: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .order-details h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1a2e35;
+            text-align: center;
+        }
+
+        .order-number {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .order-number span {
+            font-weight: bold;
+            font-size: 18px;
+            color: #1a2e35;
+        }
+
+        .estimated-delivery {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .estimated-delivery p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .estimated-delivery span {
+            font-weight: bold;
+            color: #1a2e35;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            border-radius: 24px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #1a2e35;
+            border-color: #1a2e35;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background-color: #2c3e50;
+            border-color: #2c3e50;
+        }
+
+        .btn-outline-secondary {
+            border-color: #1a2e35;
+            color: #1a2e35;
+            text-transform: uppercase;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #1a2e35;
+            color: white;
+        }
+
+        .receipt-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .receipt-link a {
+            color: #1a2e35;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 15px;
+                margin: 30px auto;
+            }
+
+            .success-card, .order-details {
+                padding: 25px;
+            }
+
+            .success-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 40px;
+            }
+
+            .success-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h1 class="success-title">Order Confirmed!</h1>
+            <p class="success-message">Thank you for your purchase. We've received your order and are processing it now. You'll receive a confirmation email shortly with your order details.</p>
+        </div>
+
+        <div class="order-details">
+            <h2>Order Information</h2>
+            <div class="order-number">
+                <p>Order Number: <span id="orderNumber">GMS-59872-X</span></p>
+            </div>
+            <div class="estimated-delivery">
+                <p>Estimated Delivery Date: <span id="deliveryDate">March 25-27, 2025</span></p>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+        </div>
+
+        <div class="receipt-link">
+            <a href="#" id="downloadReceipt">Download Receipt</a>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Generate random order number
+            function generateOrderNumber() {
+                const prefix = "GMS";
+                const numbers = Math.floor(10000 + Math.random() * 90000);
+                const letters = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                return `${prefix}-${numbers}-${letters}`;
+            }
+            
+            function calculateDeliveryDate() {
+                const today = new Date();
+                const minDelivery = new Date(today);
+                const maxDelivery = new Date(today);
+                
+                minDelivery.setDate(today.getDate() + 5);
+                maxDelivery.setDate(today.getDate() + 7);
+                
+                const options = { month: 'long', day: 'numeric' };
+                return `${minDelivery.toLocaleDateString('en-US', options)} - ${maxDelivery.toLocaleDateString('en-US', options)}, ${maxDelivery.getFullYear()}`;
+            }
+            
+            $("#orderNumber").text(generateOrderNumber());
+            $("#deliveryDate").text(calculateDeliveryDate());
+            
+            sessionStorage.setItem("cart", JSON.stringify([]));
+            
+            $("#downloadReceipt").click(function(e) {
+                e.preventDefault();
+                alert("Your receipt has been sent to your email address.");
+            });
+        });
+    </script>
+</body>
+</html>
