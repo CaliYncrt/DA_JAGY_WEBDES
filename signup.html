@@ -4,27 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="Assets/black logo.png" alt="logo" width="50" height="44">
-            </a>
-            <div class="nav-title-1">
-                <button class="nav-button-1" onclick="location.href='index.html#men-products'">Men</button>
-                <button class="nav-button-1" onclick="location.href='index.html#women-products'">Women</button>
-                <button class="nav-button-1" onclick="location.href='index.html#kids-products'">Kids</button>
-            </div>
-            <div class="nav-right">
-                <a href="cart.html" class="cart-icon">
-                    <img src="https://cdn-icons-png.flaticon.com/128/2956/2956820.png" alt="cart" width="50" height="44">
-                </a>
-            </div>
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+            <img src="Assets/black logo.png" alt="logo" width="50" height="44">
+        </a>
+
+        <!-- Burger Icon (Mobile) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto text-center">
+
+                <!-- Navigation Links -->
+                <li class="nav-item">
+                    <button class="nav-button-1" onclick="navigateToCategory('new-products')">New Arrivals</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-button-1" onclick="navigateToCategory('men-products')">Men</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-button-1" onclick="navigateToCategory('women-products')">Women</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-button-1" onclick="navigateToCategory('kids-products')">Kids</button>
+                </li>
+            </ul>
         </div>
-    </nav>
+
+        <!-- Right-Side Icons (Visible on Desktop) -->
+        <div class="d-none d-lg-flex align-items-center">
+            <a href="Login.html">
+                <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="user" width="30" height="30">
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Sidebar Menu -->
+<div class="side-menu" id="sideMenu">
+    <button class="close-menu" onclick="toggleMenu()">&times;</button>
+    <ul class="navbar-nav text-center">
+        <li class="nav-item"><a class="nav-link" href="Login.html">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="navigateToCategory('new-products')">New Arrivals</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="navigateToCategory('men-products')">Men</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="navigateToCategory('women-products')">Women</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="navigateToCategory('kids-products')">Kids</a></li>
+    </ul>
+</div>
 
     <div class="container mt-5">
         <form class="form" id="signupForm" action="index.html">
@@ -54,5 +92,31 @@
             <p class="p text-center">Already have an account? <a href="login.html" class="span">Sign In</a></p>
         </form>
     </div>
+    <script>
+        function navigateToCategory(categoryId) {
+            window.location.href = "index.html#" + categoryId;
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById("sideMenu");
+            menu.classList.toggle("show");
+        }
+        
+        // Attach event to the burger menu
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbarToggler = document.querySelector(".navbar-toggler");
+            navbarToggler.addEventListener("click", toggleMenu);
+        });
+        
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbarToggler = document.querySelector(".navbar-toggler");
+            const navbarCollapse = document.querySelector("#navbarNav");
+        
+            navbarToggler.addEventListener("click", function() {
+                navbarCollapse.classList.toggle("show");
+            });
+        });
+    </script>
 </body>
 </html>

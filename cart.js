@@ -40,58 +40,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function displayCart() {
         cartContainer.innerHTML = "";
-
+    
         if (cart.length === 0) {
             cartContainer.innerHTML = "<p>Your cart is empty.</p>";
             updateCartTotals();
             updateCartCount();
             return;
         }
-
+    
         cart.forEach((item, index) => {
             const price = parseFloat(item.price) || 0;
             const quantity = parseInt(item.quantity) || 1;
-
+    
             const cartItem = document.createElement("div");
-            cartItem.classList.add("cart-item", "d-flex", "align-items-center", "border", "p-3", "mb-3");
-
+            cartItem.classList.add("cart-item");
+    
             cartItem.innerHTML = `
                 <img src="${item.image || 'placeholder.jpg'}" alt="${item.name || 'Product'}" class="img-fluid">
-                <div class="ms-3">
+                
+                <div class="cart-item-info">
                     <h5 class="fw-bold">${item.name || 'Unnamed Item'}</h5>
                     <p class="text-muted">Size: ${item.size || 'N/A'}</p>
                 </div>
-                <div class="ms-auto d-flex align-items-center">
-                    <button class="btn btn-outline-secondary btn-sm decrease" data-index="${index}">-</button>
-                    <span class="mx-2">${quantity}</span>
-                    <button class="btn btn-outline-secondary btn-sm increase" data-index="${index}">+</button>
-                    <button class="btn btn-link text-danger ms-3 remove-item" data-index="${index}">
-                        <i class="bi bi-trash"></i>
-                    </button>
+                
+                <div class="cart-item-controls">
+                    <div class="cart-item-quantity">
+                        <button class="btn btn-outline-secondary btn-sm decrease" data-index="${index}">-</button>
+                        <span class="mx-2">${quantity}</span>
+                        <button class="btn btn-outline-secondary btn-sm increase" data-index="${index}">+</button>
+                    </div>
+                    
+                    <div class="cart-item-price">
+                        ${formatPrice(price * quantity)}
+                    </div>
+                    
+                    <div class="remove-btn-container">
+                        <button class="btn btn-link text-danger remove-item" data-index="${index}">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="fw-bold ms-3">${formatPrice(price * quantity)}</div>
             `;
-
+    
             cartContainer.appendChild(cartItem);
         });
-
+    
         updateCartTotals();
         updateCartCount();
-
+    
         document.querySelectorAll(".decrease").forEach(button => {
             button.addEventListener("click", function () {
                 const index = this.getAttribute("data-index");
                 decreaseQuantity(index);
             });
         });
-
+    
         document.querySelectorAll(".increase").forEach(button => {
             button.addEventListener("click", function () {
                 const index = this.getAttribute("data-index");
                 increaseQuantity(index);
             });
         });
-
+    
         document.querySelectorAll(".remove-item").forEach(button => {
             button.addEventListener("click", function () {
                 const index = this.getAttribute("data-index");

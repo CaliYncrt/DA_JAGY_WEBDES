@@ -57,17 +57,26 @@ function removeFromFavorites(productId) {
     updateCartCount();
 }
 
+/* CART COUNT FUNCTIONALITY */
+const cartCount = document.getElementById("cart-count");
+
 function updateCartCount() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let cartCount = document.getElementById("cart-count");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Calculate total quantity
+let totalQuantity = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
 
     if (cartCount) {
-        cartCount.textContent = cart.length;
-        cartCount.style.display = cart.length > 0 ? "flex" : "none";
+    cartCount.textContent = totalQuantity;
+    cartCount.style.display = totalQuantity > 0 ? "flex" : "none";
 
-        cartCount.classList.add("pop-animation");
-        setTimeout(() => {
-            cartCount.classList.remove("pop-animation");
-        }, 300);
-    }
+    // Add animation
+    cartCount.classList.add("pop-animation");
+    setTimeout(() => {
+        cartCount.classList.remove("pop-animation");
+    }, 300);
 }
+}
+
+// Initial cart count setup
+updateCartCount();

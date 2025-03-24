@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const checkoutContainer = document.getElementById("checkout-items");
     const totalAmount = document.getElementById("checkout-total");
-    const cartCountElement = document.querySelector(".cart-count");
+    const cartCountElement = document.querySelector("#cart-count");
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     function formatPrice(amount) {
@@ -34,9 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
         tableHeader.innerHTML = `
             <div class="header-item">ITEM</div>
             <div class="header-size">SIZE</div>
-            <div class="header-qty">QTY</div>
             <div class="header-price">PRICE</div>
-            <div class="header-actions">ACTIONS</div>
+            <div class="header-qty">QTY</div>
         `;
         checkoutContainer.appendChild(tableHeader);
 
@@ -56,16 +55,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     <span>${item.name}</span>
                 </div>
                 <div class="item-size">${item.size || "N/A"}</div>
-                <div class="item-qty">${quantity}</div>
                 <div class="item-price">${formatPrice(totalItemPrice)}</div>
+                <div class="item-qty">${quantity}</div>
                 <div class="item-actions">
-                    <span class="remove-x" data-index="${index}">×</span>
+                    <span class="remove-x" data-index="${index}"><i class="fas fa-trash"></i></span>
                 </div>
             `;
 
             checkoutContainer.appendChild(cartItem);
         });
-
         totalAmount.textContent = formatPrice(total);
         updateCartCount();
 
@@ -130,10 +128,13 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (!/^\d{2}\/\d{2}$/.test(expiryDate)) {
-            alert("Please enter a valid expiration date (MM/YY).");
+        const [month, year] = expiryDate.split("/");
+        const fullYear = "20" + year;
+        if (parseInt(fullYear) < 2025) {
+            alert("Card expiration year must be 2025 or later.");
             return;
         }
+    
 
         if (securityCode.length < 3 || securityCode.length > 4) {
             alert("Security code must be 3-4 digits.");
@@ -150,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "success.html";
     });
 
-    /* FOOTER */
+    // FOOTER TOGGLE
     const toggles = document.querySelectorAll(".cloud9-toggle");
 
     toggles.forEach((toggle, index) => {

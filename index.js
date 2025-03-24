@@ -9,6 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
+    
+        // Check if there's a hash in the URL when the page loads
+        if (window.location.hash) {
+            scrollToSection(window.location.hash.substring(1));
+        }
+    
+        // Add event listeners for navbar buttons (optional)
+        document.querySelectorAll(".nav-button-1").forEach(button => {
+            button.addEventListener("click", function () {
+                const sectionId = this.getAttribute("onclick").split("'")[1].split("#")[1];
+                scrollToSection(sectionId);
+            });
+        });
+    });
+    
 
     // Attach event listeners for navbar buttons
     const newButton = document.querySelector(".nav-button-1[onclick*='new-products']");
@@ -40,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* PRODUCTS 1 - Carousel */
+   /* PRODUCTS 1 - Carousel */
+    document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.querySelector(".unique-carousel");
     const prevBtn = document.querySelector(".unique-prev-btn");
     const nextBtn = document.querySelector(".unique-next-btn");
@@ -69,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (index > 0) {
                 index--;
             } else {
-                index = totalProducts - productsPerView; // Loop to last set
+                index = Math.max(totalProducts - productsPerView, 0);
             }
             updateCarousel();
         });
@@ -78,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function () {
             updateCarousel();
         });
     }
-
     /* FOOTER */
     const toggles = document.querySelectorAll(".cloud9-toggle");
 
@@ -128,21 +143,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartCount = document.getElementById("cart-count");
 
     function updateCartCount() {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        let count = cart.length;
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Calculate total quantity
+    let totalQuantity = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
 
         if (cartCount) {
-            cartCount.textContent = count;
-            cartCount.style.display = count > 0 ? "flex" : "none";
+        cartCount.textContent = totalQuantity;
+        cartCount.style.display = totalQuantity > 0 ? "flex" : "none";
 
-            // Add animation
-            cartCount.classList.add("pop-animation");
-            setTimeout(() => {
-                cartCount.classList.remove("pop-animation");
-            }, 300);
-        }
+        // Add animation
+        cartCount.classList.add("pop-animation");
+        setTimeout(() => {
+            cartCount.classList.remove("pop-animation");
+        }, 300);
     }
+}
 
-    // Initial cart count setup
-    updateCartCount();
+// Initial cart count setup
+updateCartCount();
 });
